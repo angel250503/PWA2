@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Configuración de Service Worker & Manifest</title>
+    <style>
+        body {
+            background-color: #f8f9fa; /* Fondo claro */
+            margin: 20px; /* Márgenes */
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <h1 class="mt-4 text-center">Parámetros de Configuración - Service Worker & Manifest</h1>
+
+    <p class="lead text-justify">Service Worker y el archivo Manifest son componentes clave en el desarrollo de Progressive Web Apps (PWAs).
+        A continuación, se describen algunos de los parámetros importantes relacionados con Service Worker y Manifest.</p>
+
+    <h2 class="mt-4">Service Worker</h2>
+
+    <p class="lead text-justify">En la configuración de Service Worker, algunos parámetros esenciales son:</p>
+
+    <ul>
+        <li><strong>scope:</strong> Define el alcance del Service Worker.</li>
+        <li><strong>install:</strong> Evento de instalación, donde se pueden almacenar en caché los recursos.</li>
+        <li><strong>fetch:</strong> Evento que se dispara cada vez que se realiza una solicitud HTTP.</li>
+        <li><strong>activate:</strong> Evento de activación, donde se pueden eliminar recursos antiguos de la caché.</li>
+    </ul>
+
+    <h2 class="mt-4">Manifest</h2>
+
+    <p class="lead text-justify">En el archivo Manifest, algunos parámetros importantes son:</p>
+
+    <ul>
+        <li><strong>name:</strong> Nombre de la aplicación.</li>
+        <li><strong>short_name:</strong> Nombre corto de la aplicación.</li>
+        <li><strong>start_url:</strong> URL de inicio cuando se lanza la aplicación.</li>
+        <li><strong>display:</strong> Especifica cómo se debe mostrar la aplicación.</li>
+        <li><strong>background_color:</strong> Color de fondo de la aplicación.</li>
+    </ul>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Agrega la referencia a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        body {
+            margin: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container mt-3">
+
+        <section id="inicio">
+            <h2>Service Workers </h2>
+            <p>
+              Imagina que tu sitio web es como un aeropuerto y las solicitudes que llegan son aviones despegando. Los trabajadores de servicio son como controladores de tráfico aéreo que dirigen esas solicitudes. Pueden cargar desde la red o incluso desde el caché, lo que significa que tienen el control total de cada solicitud web hecha desde tu sitio.</p>
+              <p>
+              Aunque estos "controladores de tráfico aéreo" (los trabajadores de servicio) están escritos en JavaScript, son un poco diferentes de tus archivos JavaScript estándar. En resumen, te dan el poder de gestionar cómo se manejan las solicitudes en tu sitio web, brindando una serie de posibilidades para mejorar la experiencia del usuario.</p>
+              En términos más simples, si un controlador de tráfico aéreo puede redirigir un avión a otro aeropuerto o retrasar un aterrizaje, un trabajador de servicio te permite redirigir o incluso detener completamente las solicitudes de tu sitio web.
+              <ul>
+                  <li>
+                      <p>Se ejecuta en su propio contexto de script global. </p>
+                  </li>
+                  <li>
+                      <p>No está vinculado a una página web en particular</p>
+                  </li>
+                  <li>
+                      <p>No puede modificar elementos en la página web: no tiene acceso DOM</p>
+                  </li>
+                  <li>
+                      <p>Es solo HTTPS </p>
+                  </li>
+            </ul>
+            <div class="text-center">
+                <!-- Cambia "RUTA_DE_LA_IMAGEN_LOCAL" por la ruta correcta de tu imagen local -->
+                <img src="img/sw.png" alt="ServiceWorker" class="img-fluid rounded" style="max-height: 300px;"></div>
+            <p>Están basados ​​en eventos y puedes elegir los eventos que deseas tocar. Una vez que tenga una comprensión básica de los diferentes eventos, puedes comenzar con
+              Service Workers es más fácil de lo que piensas. </p>
+              <div class="text-center">
+                <!-- Cambia "RUTA_DE_LA_IMAGEN_LOCAL" por la ruta correcta de tu imagen local -->
+                <img src="img/sw1.png" alt="ServiceWorker1" class="img-fluid rounded" style="max-height: 300px;"></div>
+            <p>Puedes ver que el Service Worker se encuentra en un hilo diferente y es capaz de interceptar la red peticiones. Recuerde, Services Workers son como los controladores de tránsito aéreo en el sentido de que brindan además de que usted tiene control total de las solicitudes de red que entran y salen de su sitio web. Esta habilidad los hace extremadamente poderosos y le permite decidir cómo responder.</p>
+      
+            <p>Los Service Workers están diseñados para ser completamente asíncronos y, como consecuencia, no puede acceder a cosas como XHR síncrono y localStorage.</p>
+          <h3>El ciclo de la vida del service Worker </h3>
+            <p> El sitio web es una plataforma de blogs popular que millones de escritores utilizan cada
+              día para compartir su contenido. Durante el proceso de registro, el Service Work se encuentra en semáforo rojo porque
+              necesita ser descargado y analizado.</p>
+            <div class="text-center">
+                <!-- Cambia "RUTA_DE_LA_IMAGEN_LOCAL" por la ruta correcta de tu imagen local -->
+                <img src="img/sw2.jpg" alt="ServiceWorker2" class="img-fluid rounded" style="max-height: 300px;"></div>
+            <p> 
+            Cuando carga una página por primera vez sin un Service Worker activo, el Ser-Vice Worker no manejará ninguna solicitud que entre o salga. Sólo después de haber sido instalado y activado es el que tiene el control de su propio alcance. Esto significa la lógica dentro del Servicio.
+            El trabajador solo se activará si actualiza la página o navega a otra página.</p>
+        </section>
+        
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

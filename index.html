@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+    
+    <style>
+        
+
+        /* Estilo para el splash screen */
+        #splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #90B1DB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    
+
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;" >
+        <a class="navbar-brand" href="#">PWA</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="loadDoc('Paginas/introduccion.html', myFunction1)">Introducción</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        PWA
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" onclick="loadDoc('Paginas/PWA.html', myFunction1)">Paginas Web Progresivas</a>
+                        <a class="dropdown-item" onclick="loadDoc('Paginas/ServicesW.html', myFunction1)">Services Workers</a>
+                        <a class="dropdown-item" onclick="loadDoc('Paginas/Flipkart.html', myFunction1)">Informacion sobre el rendimiento: Flipkart y promesas</a>
+                    
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false" >PWA 2</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" onclick="loadDoc('Paginas/Beneficios.html', myFunction1)"  >Beneficios de rendimiento</a>
+                        <a class="dropdown-item" onclick="loadDoc('Paginas/shell.html', myFunction1)">Arquitectura de shell de aplicaciones</a>
+                        <a class="dropdown-item" onclick="loadDoc('Paginas/Fetch.html', myFunction1)">Fetch y Caches</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown3" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">PWA Pruebas</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                        <a class="dropdown-item" onclick="loadDoc('Paginas/Configuracion.html', myFunction1)">Parámetros de configuración - AJAX</a>
+                        <a class="dropdown-item" onclick="loadDoc('Paginas/Configuracion2.html', myFunction1)"> Parámetros de configuración - Service Worker & Manifest</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<!-- Splash screen -->
+<div id="splash">
+    <h1>Bienvenido a mi página web</h1>
+</div>
+<div id="portada">
+    <div class="jumbotron text-center">
+        <img src="img/utp.png" class="img-fluid" alt="Imagen de portada">
+
+        <h1 class="display-4">Universidad Tecnologica de Puebla</h1>
+
+        <p class="lead">Integrantes:</p>
+        <p>Janet Perez Rosas<br>UTP0145486</p>
+        <p>Angel Antonio Hernandez Torres<br>UTP0146028</p>
+        
+
+        <p class="lead">Docente:</p>
+        <p>Javier Nolasco Hernandez</p>
+
+        <p class="lead">Fecha:</p>
+        <p>22/11/2023</p>
+    </div>
+
+</div>
+    <div id="contenido"></div>
+
+    <script>
+        function loadDoc(url, cFunction) {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                cFunction(this)
+            }
+            xhttp.open("GET", url, true);
+            xhttp.send();
+        }    
+    
+        function myFunction1(xhttp) {
+            document.getElementById("contenido").innerHTML = xhttp.responseText;
+            document.getElementById("portada").style.display = "none"; //ocultar div principal
+        }
+    </script>
+
+
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Oculta el splash screen después de 3 segundos
+            setTimeout(function () {
+                document.getElementById('splash').style.display = 'none';
+            }, 3000);
+        });
+    </script>
+
+<script async src="script.js"></script>
+<script>
+    if('serviceWorker' in navigator){
+        navigator.serviceWorker.register(
+            'sw.js'
+        ).then(
+            function(registro){
+                console.log('sw ok',registro.scope);
+            }
+        ).catch(
+            function(error){
+                console.log('sw fallo',error);
+            }
+        );
+    }
+</script>
+    <!-- Agrega el siguiente script para incluir jQuery y Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+
+</html>
